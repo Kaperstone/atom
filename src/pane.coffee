@@ -726,7 +726,7 @@ class Pane extends Model
     @container.activateNextPane() if @isActive()
     @emitter.emit 'did-destroy'
     @emitter.dispose()
-    item.destroy?() for item in @items.slice()
+    @destroyItems()
     @container?.didDestroyPane(pane: this)
 
   ###
